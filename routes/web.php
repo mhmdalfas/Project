@@ -45,3 +45,4 @@ Route::view('hll.order','order');
 
 //Route::resource('quar', 'quarters');
 //Route::view('hll.quar','quar');
+//blaaaaah
