@@ -55,7 +55,7 @@ class OrderController extends Controller
             'orderno'      =>  'required',
             'scheme'       =>  'required',
             'quantity'     =>  'required',
-           
+
 
             ]);
 
@@ -63,7 +63,8 @@ class OrderController extends Controller
                 'orderno'    =>  $request->get('orderno'),
                 'scheme'     =>  $request->get('scheme'),
                 'quantity'    =>  $request->get('quantity'),
-                
+                'ANo'         => 0,
+
 
 
             ]);
@@ -112,30 +113,31 @@ class OrderController extends Controller
      */
     public function edit(Request $id)
     { $orders = order::find($id);
-      return view('hll.edit', compact('orders', 'id'));
+    //  return view('hll.edit', compact('orders', 'id'));
+    return $id;
     }
-    
-    
-    
-    
+
+
+
+
     public function update(Request $request, $id)
         {
-    
+
             $this->validate($request, [
                 'orderno'      =>  'required',
                 'scheme'       =>  'required',
                 'quantity' => 'required',
                 'oid'          =>'required',
-    
-    
+
+
                  ]);
                 $orders = order::find($id);
                 $orders->orderno = $request->get('orderno');
                 $orders->scheme = $request->get('scheme');
                 $orders->quantity = $request->get('quantity');
                // $orders->oid = $request->get('oid');
-    
-    
+
+
             $orders->save();
             return redirect()->route('hll.index')->with('success', 'Data Updated');
             $this->validate($request, [
@@ -144,7 +146,7 @@ class OrderController extends Controller
                 'PFT' => 'required',
                 'KFB' => 'required',
                 'KFC' => 'required',
-    
+
                  ]);
                 $consignees = consignee::find($id);
               //  $consignees->oid =$request->get('oid');
@@ -154,11 +156,11 @@ class OrderController extends Controller
                 $consignees->PFT = $request->get('PFT');
                 $consignees->KFB = $request->get('KFB');
                 $consignees->KFC = $request->get('KFC');
-    
+
             $consignees->save();
             return redirect()->route('hll.edit')->with('success', 'Data Updated');
-    
-    
+
+
         }
 
 

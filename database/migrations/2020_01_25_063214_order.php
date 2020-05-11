@@ -19,6 +19,7 @@ class Order extends Migration
             $table->string('orderno');
             $table->string('scheme');
             $table->integer('quantity');
+            $table->integer('ANo');
         //    $table->unsignedinteger('oid');
           //  $table->unique('oid');
             $table->timestamps();

@@ -31,11 +31,6 @@ Route::resource('hll','OrderController');
 Route::get('/order', 'OrderController@create')->name('store');
 Route::get('update', 'JoinTableController@update')->name('update');
 
-Route::get('/dynamic_pdf', 'DynamicPDFController@index');
-
-Route::get('/dynamic_pdf/pdf', 'DynamicPDFController@pdf');
-
-
 
 //Route::resource('index', 'ConsigneeController');
 //Route::view('hll.edit','edit');
@@ -50,7 +45,3 @@ Route::view('hll.order','order');
 
 //Route::resource('quar', 'quarters');
 //Route::view('hll.quar','quar');
-
-
-
-

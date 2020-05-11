@@ -2,13 +2,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">    
+<div class="container">
     <br />
-    <h3 align="center">Search Orders</h3>
-    <div class="col-md" align='right'><a href="{{route('home')}}"class="btn btn-primary" align='right'>Home</a>
-        
+    <h3 align="center">Order Amendments</h3>
+    <div class="col-md" align='right'>
+            <a href="{{route('home')}}"class="btn btn-primary" align='right'>Home</a>
             <a href="{{ url('dynamic_pdf/pdf') }}" class="btn btn-danger" align='right'>Convert into PDF</a>
-           </div>
+     </div>
     </div>
     <br />
 
@@ -16,15 +16,15 @@
         <form action="/search" method="get">
            <div class="input-group">
                <input type="search" name="search" class="form-control">
-               <span class="input-group-prepend"> 
+               <span class="input-group-prepend">
                    <button type="submit"  class="btn btn-primary">Search</button>
                </span>
             </div>
-        
+
         </form>
         </div>
-        
-        
+
+
 
 
   <div >
@@ -47,8 +47,8 @@
                <th>Q4</th>
                <th>Created Date </th>
                <th>Updated Date</th>
-              
-               
+
+
            </tr>
           </thead>
           <tbody>
@@ -71,8 +71,8 @@
             <td>{{ $row->created_at}}</td>
             <td>{{ $row->updated_at }}</td>
 
-            
-            
+
+
            </tr>
           @endforeach
           </tbody>
@@ -80,4 +80,3 @@
   </div>
  </div>
  @endsection
- 

@@ -9,13 +9,18 @@ use App\order;
 
 class JoinTableController extends Controller
 {
- 
 
-   
+
+
   function index()
   {
     $data=DB::table('orders')
-     ->join('consignees', 'consignees.oid','=' , 'orders.id')
+    ->join('consignees',function($join)
+                        {
+                          $join->on('consignees.oid', '=' , 'orders.id')
+                               ->on('consignees.ANo', '=' , 'orders.ANo');
+                        }
+            )
 
      ->select('consignees.*','orders.*'  )
      ->get();
@@ -25,85 +30,109 @@ class JoinTableController extends Controller
 
 function search(Request $request)
 {  $search=$request->get('search');
+  //return $request;
+
 $data=DB::table('orders')
  ->join('consignees', 'consignees.oid','=' , 'orders.id')
-
+ /*->join('consignees',function($join)
+                     {
+                       $join->on('consignees.oid', '=' , 'orders.id')
+                            ->on('consignees.ANo', '=' , 'orders.ANo');
+                     }
+         )*/
  ->select('orders.orderno','orders.quantity','orders.scheme', 'consignees.consignee', 'consignees.cqty','consignees.PFT',
  'consignees.KFB','consignees.KFC','consignees.ANo','consignees.plantd','consignees.Q1',
  'consignees.Q2','consignees.Q3','consignees.Q4','orders.created_at','orders.updated_at' )
  ->where('orders.orderno', 'like', '%'.$search.'%')
  ->get();
+ //dd($request);
  return view('hll.single', compact('data'));
 }
 
 
-public function edit(Request $id)
-{ $orders = order::find($id);
-  return view('hll.edit', compact('orders', 'id'));
+public function edit(Request $req)
+{
+  //return $req;
+//  $id=$req->get('id');
+  //$id = $req->all();
+  $id = $req->input('id');
+//  dd($id);
+
+
+  $orders = DB::table('orders')->find($id);
+  //dd($orders);
+  $oid = $orders->id;
+  $ano = $orders->ANo;
+
+
+  $data=DB::table('orders')
+      ->join('consignees',function($join)
+                          {
+                            $join->on('consignees.oid', '=' , 'orders.id')
+                                 ->on('consignees.ANo', '=' , 'orders.ANo');
+                          }
+              )
+      ->select('orders.id','orders.orderno','orders.quantity','orders.scheme', 'orders.ANo','consignees.oid','consignees.consignee', 'consignees.cqty','consignees.PFT',
+                        'consignees.KFB','consignees.KFC','consignees.ANo','consignees.plantd','consignees.Q1',
+                        'consignees.Q2','consignees.Q3','consignees.Q4','orders.created_at','orders.updated_at' )
+      ->where('orders.id', '=', $id)
+      ->get();
+
+  //  return $data;
+
+    return view('hll.editc', compact('data'));
+
 }
 
 
+public function update(Request $request)
+    {
+      //return $request;
+      $this->validate($request, [
+          'id'           =>  'required',
+          'orderno'      =>  'required',
+          'scheme'       =>  'required',
+          'quantity'     =>  'required',
+          'ANo'          =>  'required',
+          ]);
 
+      /*
+      Increment $ano
+      Insert into Consignee table
+      Update Order table
+      */
+       // NOTE: Increment Amendment
+      $Amend_no = $request->ANo;
+      $Amend_no = $Amend_no + 1;
+      //dd($Amend_no);
 
-public function update(Request $request, $id)
-    {$data=DB::table('orders')
-      ->join('consignees', 'consignees.oid','=' , 'orders.id');
+      $consignees = new consignee([
+          'consignee' => $request->get('consignee'),
+          'cqty'      => $request->get('cqty'),
+          'PFT'     =>  $request->get('PFT'),
+          'KFB'     =>  $request->get('KFB'),
+          'KFC'     =>  $request->get('KFC'),
+          'oid'     =>  $request->get('oid'),
+        //  'oid'  => $request->id,
+          'ANo'     => $Amend_no,
+          'plantd'    => $request->get('plantd'),
+          'Q1'     =>  $request->get('Q1'),
+          'Q2'     =>  $request->get('Q2'),
+          'Q3'     =>  $request->get('Q3'),
+          'Q4'     =>  $request->get('Q4')
 
-       
-
-             
-            $orders = order::find($id);
-            $orders->scheme = $request->get('orderno');
-            $orders->scheme = $request->get('scheme');
-            $orders->quantity = $request->get('quantity');
-           // $orders->oid = $request->get('oid');
-
-
-        $orders->save();
-        return redirect()->route('hll.index')->with('success', 'Data Updated');
-        $this->validate($request, [
-            'consignee' => 'required',
-            'cqty'      =>  'required',
-            'PFT' => 'required',
-            'KFB' => 'required',
-            'KFC' => 'required',
-
-             ]);
-            $consignees = consignee::find($id);
-          //  $consignees->oid =$request->get('oid');
-            $consignees->oid = $orders->id;
-            $consignees->consignee = $request->get('consignee');
-            $consignees->cqty =$request->get('cqty');
-            $consignees->PFT = $request->get('PFT');
-            $consignees->KFB = $request->get('KFB');
-            $consignees->KFC = $request->get('KFC');
-
+      ]);
+        //return $consignees;
         $consignees->save();
-        return redirect()->route('hll.edit')->with('success', 'Data Updated');
-
+        //return
+        DB::table('orders')
+        ->where('id',$request->id)
+        ->update(['ANo' => $Amend_no]);
+        //$orders = DB::table('orders')->find($request->id);
+        //$orders->ANo = $Amend_no;
+        //return [$orders];
+        //$orders->update();
+        return redirect()->route('join')->with('success', 'Data Updated');
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
