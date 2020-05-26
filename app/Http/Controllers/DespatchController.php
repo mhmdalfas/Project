@@ -9,9 +9,13 @@ class DespatchController extends Controller
 {
     public function index()
     {
-        //
-    }
 
+        $mdespatch = mdespatch::all()->toArray();
+        return view('hll.mdespatchdata', compact('mdespatch'));
+
+
+
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -67,7 +71,7 @@ public function store(Request $request)
 
 
                  ]);
-                $mdespatch = despatch::find($id);
+                $mdespatch = mdespatch::find($id);
                  $mdespatch->slno = $request->get('slno');
                  $mdespatch->date = $request->get('date');
                  $mdespatch->transporter = $request->get('transporter');
@@ -85,6 +89,9 @@ return redirect()->route('hll.mdespatch')->with('success', 'Data Updated');}
 
 
 
-
+public function edit(Request $id)
+    { $mdespatch = mdespatch::find($id);
+     return view('hll.editmdespatch', compact('mdespatch', 'id'));
 
 }
+        }

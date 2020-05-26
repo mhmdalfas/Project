@@ -6,6 +6,7 @@
 <div class="row">
  <div class="col-md-12">
   <div align=right><a href="{{route('home')}}"class="btn btn-primary" align='right'>Home</a></div>
+  <div align=right><a href="{{route('mdata')}}"class="btn btn-primary" align='right'>View Data</a></div>
 
   <h3 align="center">Moods Despatch</h3>
 

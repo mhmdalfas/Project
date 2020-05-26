@@ -35,9 +35,7 @@ Route::get('update', 'JoinTableController@update')->name('update');
 Route::get('/dynamic_pdf', 'DynamicPDFController@index');
 
 Route::get('/dynamic_pdf/pdf', 'DynamicPDFController@pdf');
-Route::resource('mdespatch', 'DespatchController');
-Route::get('/morder', 'DespatchController@create')->name('create');
-Route::get('hll.mdespatch', 'DespatchController@store')->name('mdespatch');
+
 
 
 
@@ -50,7 +48,18 @@ Route::get('hll.mdespatch', 'DespatchController@store')->name('mdespatch');
 
 
 Route::view('hll.order','order');
+
+
+
+
+Route::resource('mdespatch', 'DespatchController');
+Route::get('/morder', 'DespatchController@create')->name('create');
+Route::get('hll.mdespatch', 'DespatchController@store')->name('mdespatch');
+Route::get('/mdespatchdata', 'DespatchController@index')->name('mdata');
 Route::view('hll.mdespatch','mdespatch');
+
+
+
 
 //Route::view('hll.cons','cons');
 
