@@ -139,7 +139,6 @@ class OrderController extends Controller
 
 
             $orders->save();
-            return redirect()->route('hll.index')->with('success', 'Data Updated');
             $this->validate($request, [
                 'consignee' => 'required',
                 'cqty'      =>  'required',

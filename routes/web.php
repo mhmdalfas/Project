@@ -36,6 +36,7 @@ Route::get('/dynamic_pdf', 'DynamicPDFController@index');
 
 Route::get('/dynamic_pdf/pdf', 'DynamicPDFController@pdf');
 Route::resource('mdespatch', 'DespatchController');
+Route::get('/morder', 'DespatchController@create')->name('create');
 
 
 
