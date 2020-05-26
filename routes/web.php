@@ -32,6 +32,13 @@ Route::get('/order', 'OrderController@create')->name('store');
 Route::get('update', 'JoinTableController@update')->name('update');
 
 
+Route::get('/dynamic_pdf', 'DynamicPDFController@index');
+
+Route::get('/dynamic_pdf/pdf', 'DynamicPDFController@pdf');
+Route::resource('mdespatch', 'DespatchController');
+
+
+
 //Route::resource('index', 'ConsigneeController');
 //Route::view('hll.edit','edit');
 //Route::view('hll.editc','editc');
