@@ -11,6 +11,8 @@
         <a href="{{route('search')}}"class="btn btn-primary btn-lg">Search Amendments</a>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <a href="{{route('join')}}"class="btn btn-primary btn-lg">View Data</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{{route('create')}}"class="btn btn-primary btn-lg">Moods Despatch</a>
 <br><br><br><br>
 
 </div>

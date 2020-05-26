@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Mdespatch extends Migration
+class mdespatch extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class Mdespatch extends Migration
      */
     public function up()
     {
-        Schema::create('Mdespatch', function (Blueprint $table) {
+        Schema::create('mdespatches', function (Blueprint $table) {
             $table->bigincrements('id');
             $table->integer('slno');
             $table->date('date');

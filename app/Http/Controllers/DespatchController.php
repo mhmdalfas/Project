@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\mdespatch;
 
-class mDespatchController extends Controller
+class DespatchController extends Controller
 {
     public function index()
     {
@@ -28,7 +29,9 @@ public function store(Request $request)
             
 
             ]);
-$mdespatch = new despatch([
+
+         $mdespatch = new mdespatch([
+ 
         'slno' => $request -> get('slno'),
         'date' => $request -> get('date'),
         'transporter' => $request -> get('transporter'),
@@ -46,7 +49,8 @@ $mdespatch = new despatch([
 
 
             ]);
-            $mdespatch->saveOrFail();
+            $mdespatch->save();
+            return redirect()->route('mdespatch.create')->with('success', 'Data Added');
 
 
        }
@@ -77,7 +81,7 @@ $mdespatch = new despatch([
                  $mdespatch->rate = $request->get('rate');
                  $mdespatch->amount = $request->get('amount');
 $mdespatch->save();
-return redirect()->route('hll.index')->with('success', 'Data Updated');}
+return redirect()->route('hll.mdespatch')->with('success', 'Data Updated');}
 
 
 
