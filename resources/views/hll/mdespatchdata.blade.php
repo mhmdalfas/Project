@@ -46,9 +46,9 @@
     <td>{{$row['amount']}}</td>
     
     
-    <td><a href="" class="btn btn-warning">Edit</a></td>
+    <td><a href="{{action('DespatchController@edit', $row['id'])}}" class="btn btn-warning">Edit</a></td>
     <td>
-        <form method="post" class="delete_form" action="">
+        <form method="post" class="delete_form" action="{{action('DespatchController@destroy', $row['id'])}}">
             {{csrf_field()}}
             <input type="hidden" name="_method" value="DELETE" />
             <button type="submit" class="btn btn-danger">Delete</button>

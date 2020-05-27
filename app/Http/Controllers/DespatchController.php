@@ -59,18 +59,27 @@ public function store(Request $request)
 
        }
 
-
+       public function edit(Request $id)
+       { 
+           $mdespatch = mdespatch::find($id);
+        return view('hll.editmdespatch', compact('mdespatch', 'id'));
+   
+        }
 
 
     public function update(Request $request, $id)
         {
 
+           
             $this->validate($request, [
                 'slno'      =>  'required',
                 
+    
+                ]);
+                
 
 
-                 ]);
+                
                 $mdespatch = mdespatch::find($id);
                  $mdespatch->slno = $request->get('slno');
                  $mdespatch->date = $request->get('date');
@@ -85,13 +94,14 @@ public function store(Request $request)
                  $mdespatch->rate = $request->get('rate');
                  $mdespatch->amount = $request->get('amount');
 $mdespatch->save();
-return redirect()->route('hll.mdespatch')->with('success', 'Data Updated');}
+return redirect()->route('mdespatch.create')->with('success', 'Data Updated');}
+
+public function destroy($id)
+    {
+        $mdespatch = mdespatch::find($id);
+        $mdespatch->delete();
+        return redirect()->route('mdespatch.create')->with('success', 'Data Deleted');
+    }
 
 
-
-public function edit(Request $id)
-    { $mdespatch = mdespatch::find($id);
-     return view('hll.editmdespatch', compact('mdespatch', 'id'));
-
-}
         }

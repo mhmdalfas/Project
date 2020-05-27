@@ -57,6 +57,10 @@ Route::get('/morder', 'DespatchController@create')->name('create');
 Route::get('hll.mdespatch', 'DespatchController@store')->name('mdespatch');
 Route::get('/mdespatchdata', 'DespatchController@index')->name('mdata');
 Route::view('hll.mdespatch','mdespatch');
+Route::get('hll.editmdespatch', 'DespatchController@edit')->name('editmd');
+Route::get('updatemd', 'DespatchController@update')->name('updatemd');
+
+
 
 
 
