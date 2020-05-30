@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('master')
 
 
 @section('content')
@@ -6,9 +6,9 @@
 <div class="row">
  <div class="col-md-12">
   <div align=right><a href="{{route('home')}}"class="btn btn-primary" align='right'>Home</a></div>
-  <div align=right><a href="{{route('mdata')}}"class="btn btn-primary" align='right'>View Data</a></div>
+  
 
-  <h3 align="center">Moods Despatch</h3>
+  <h3 align="center">Government Despatch</h3>
 
   <br />
   @if(count($errors) > 0)
@@ -34,11 +34,12 @@
   <form method="post" action="{{url('mdespatch')}}">
     {{csrf_field()}}
         <div class="form-group">
-        <input type="text" name="slno" class="form-control" placeholder="SL No" value="{{old('slno')}}" />
+        <input type="text" name="slno" class="form-control" placeholder="SL No"  value="{{old('slno')}}" />
          </div>
+        
 
          <div class="form-group">
-         <input type="date" name="date" class="form-control" placeholder="Date" value="{{old('date')}}" />
+         <input placeholder="Date" name="date" class="form-control"  value="{{old('date')}}" onfocus="(this.type='date')" onblur="(this.type='text')"/>
          </div>
 
          <div class="form-group">
@@ -51,11 +52,11 @@
             </div>
 
             <div class="form-group">
-            <input type="date" name="lrdate" class="form-control" placeholder="LR Date" value="{{old('lrdate')}}"/>
+            <input  name="lrdate" class="form-control" placeholder="LR Date" value="{{old('lrdate')}}" onfocus="(this.type='date')" onblur="(this.type='text')"/>
             </div>
 
             <div class="form-group">
-              <input type="date" name="pickupdate" class="form-control" placeholder="Pickup Date" value="{{old('pickupdate')}}"/>
+              <input  name="pickupdate" class="form-control" placeholder="Pickup Date" value="{{old('pickupdate')}}" onfocus="(this.type='date')" onblur="(this.type='text')"/>
               </div>
 
               <div class="form-group">

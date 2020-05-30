@@ -12,7 +12,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;
         <a href="{{route('join')}}"class="btn btn-primary btn-lg">View Data</a>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="{{route('create')}}"class="btn btn-primary btn-lg">Moods Despatch</a>
+        <a href="{{route('mdespatch.index')}}"class="btn btn-primary btn-lg">Govt Despatch</a>
 <br><br><br><br>
 
 </div>

@@ -1,18 +1,21 @@
-@extends('layouts.app')
-
+@extends('master')
 @section('content')
 
 <div class="row">
  <div class="col-md-12">
   <br />
-  <h3 align="center">Moods Despatch </h3>
+  <h3 align="center">Government Despatch </h3>
   <br />
   @if($message = Session::get('success'))
   <div class="alert alert-success">
    <p>{{$message}}</p>
   </div>
   @endif
-  
+  <div align="right">
+    <a href="{{route('mdespatch.create')}}" class="btn btn-primary">Add</a>
+    <br />
+    <br />
+   </div>
   <table class="table table-bordered table-striped">
    <tr>
     <th>SL NO</th>
@@ -30,7 +33,7 @@
     <th>Edit</th>
     <th>Delete</th>
    </tr>
-   @foreach($mdespatch as $row)
+   @foreach($mdespatches as $row)
    <tr>
     <td>{{$row['slno']}}</td>
     <td>{{$row['date']}}</td>
