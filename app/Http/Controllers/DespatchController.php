@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\mdespatch;
+use App\Mdespatch;
 
 class DespatchController extends Controller
 {
@@ -11,7 +11,7 @@ class DespatchController extends Controller
     public function index()
     {
 
-        $mdespatches  = mdespatch::all()->toArray();
+        $mdespatches  = Mdespatch::all()->toArray();
         return view('despatch.index', compact('mdespatches'));
     }
     /**
@@ -31,7 +31,7 @@ class DespatchController extends Controller
             'slno'      =>  'required'
              ]);
 
-         $mdespatch = new mdespatch([
+         $mdespatch = new Mdespatch([
  
         'slno' => $request -> get('slno'),
         'date' => $request -> get('date'),
@@ -57,7 +57,7 @@ class DespatchController extends Controller
     }
        public function edit($id)
        { 
-           $mdespatch = mdespatch::find($id);
+           $mdespatch = Mdespatch::find($id);
         return view('despatch.edit', compact('mdespatch', 'id'));
    
         }
@@ -76,7 +76,7 @@ class DespatchController extends Controller
 
 
                 
-                $mdespatch = mdespatch::find($id);
+                $mdespatch = Mdespatch::find($id);
                  $mdespatch->slno = $request->get('slno');
                  $mdespatch->date = $request->get('date');
                  $mdespatch->transporter = $request->get('transporter');
@@ -94,7 +94,7 @@ return redirect()->route('mdespatch.index')->with('success', 'Data Updated');}
 
 public function destroy($id)
     {
-        $mdespatch = mdespatch::find($id);
+        $mdespatch = Mdespatch::find($id);
         $mdespatch->delete();
         return redirect()->route('mdespatch.index')->with('success', 'Data Deleted');
     }
