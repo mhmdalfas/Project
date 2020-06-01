@@ -25,11 +25,13 @@
     <th>LR Date</th>
     <th>Pick Up Date</th>
     <th>Scheme</th>
+    <th>Inspection Note No</th>
     <th>Destination</th>
     <th>No Of Boxes</th>
     <th>Weight</th>
+    <th>Quantity</th>
     <th>Rate</th>
-    <th>Amount</th>
+    <th>Total</th>
     <th>Edit</th>
     <th>Delete</th>
    </tr>
@@ -42,11 +44,13 @@
     <td>{{$row['lrdate']}}</td>
     <td>{{$row['pickupdate']}}</td>
     <td>{{$row['scheme']}}</td>
+    <td>{{$row['inn']}}</td>
     <td>{{$row['destination']}}</td>
     <td>{{$row['nobox']}}</td>
     <td>{{$row['weight']}}</td>
+    <td>{{$row['quantity']}}</td>
     <td>{{$row['rate']}}</td>
-    <td>{{$row['amount']}}</td>
+    <td>{{$row['total']}}</td>
     
     
     <td><a href="{{action('DespatchController@edit', $row['id'])}}" class="btn btn-warning">Edit</a></td>

@@ -1,5 +1,9 @@
 @extends('master')
+
 @section('content')
+
+
+
 <div class="row">
 <div class="col-md-12">
 <div align=right><a href="{{route('home')}}"class="btn btn-primary" align='right'>Home</a></div>
@@ -22,6 +26,7 @@
 <div>
     <form method="post" action="{{url('mdespatch')}}">
         {{csrf_field()}}
+         
         <div class="form-group">
             <input type="text" name="slno" class="form-control" placeholder="SL No"  value="{{old('slno')}}" />
         </div>
@@ -44,6 +49,9 @@
             <input type="text" name="scheme" class="form-control" placeholder="Scheme" value="{{old('scheme')}}"/>
         </div>
         <div class="form-group">
+          <input type="text" name="inn" class="form-control" placeholder="Inspection Note No" value="{{old('inn')}}"/>
+      </div>
+        <div class="form-group">
             <input type="text" name="destination" class="form-control" placeholder="Destination" value="{{old('destination')}}"/>
         </div>
         <div class="form-group">
@@ -56,7 +64,10 @@
             <input type="text" name="rate" class="form-control" placeholder="Rate" value="{{old('rate')}}"/>
         </div>
         <div class="form-group">
-            <input type="text" name="amount" class="form-control" placeholder="Amount" value="{{old('amount')}}"/>
+            <input type="text" name="quantity" class="form-control" placeholder="Quantity" value="{{old('quantity')}}"/>
+        </div>
+        <div class="form-group">
+            <input type="text" name="total" class="form-control" placeholder="Total" value="{{old('total')}}" readonly/>
         </div>
         <div class="form-group" align=center>
             <input type="submit" class="btn btn-primary btn-lg" />

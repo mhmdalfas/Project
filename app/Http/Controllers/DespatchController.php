@@ -44,13 +44,30 @@ class DespatchController extends Controller
         'nobox' => $request -> get('nobox'),
         'weight' => $request -> get('weight'),
         'rate' => $request -> get('rate'),
-        'amount' => $request -> get('amount')
+        'quantity' => $request -> get('quantity'),
+        'inn' => $request -> get('inn'),
+
                   ]);
+                  $rate = $mdespatch->rate;
+                  $quantity = $mdespatch->quantity;
+                  $mdespatch->total=$rate*$quantity;
             $mdespatch->save();
             return redirect()->route('mdespatch.index')->with('success', 'Data Added');
 
 
        }
+       public function total(Request $request)
+       {
+           $rate=$request->input('rate');
+           $quantity=$request->input('quantity');
+           $total=1;
+           $total=$rate*$quantity;
+
+       }
+
+
+
+
        public function show($id)
     {
         //

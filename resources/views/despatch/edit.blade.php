@@ -17,40 +17,43 @@
 			{{csrf_field()}}
 			<input type="hidden" name="_method" value="PATCH" />
 			<div class="form-group">
-				<input type="text" name="slno" class="form-control" value="{{$mdespatch->slno}}" placeholder="SL NO" />
+				SL NO	<input type="text" name="slno" class="form-control" value="{{$mdespatch->slno}}" placeholder="SL NO" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="date" class="form-control" value="{{$mdespatch->date}}" placeholder="Date" />
+				Date<input type="text" name="date" class="form-control" value="{{$mdespatch->date}}" placeholder="Date" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="transporter" class="form-control" value="{{$mdespatch->transporter}}" placeholder="Transporter" />
+				Transporter	<input type="text" name="transporter" class="form-control" value="{{$mdespatch->transporter}}" placeholder="Transporter" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="lrno" class="form-control" value="{{$mdespatch->lrno}}" placeholder="LR NO" />
+				LR NO<input type="text" name="lrno" class="form-control" value="{{$mdespatch->lrno}}" placeholder="LR NO" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="lrdate" class="form-control" value="{{$mdespatch->lrdate}}" placeholder="LR Date" />
+				LR Date	<input type="text" name="lrdate" class="form-control" value="{{$mdespatch->lrdate}}" placeholder="LR Date" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="pickupdate" class="form-control" value="{{$mdespatch->pickupdate}}" placeholder="Pick Up Date" />
+				Pick Up Date<input type="text" name="pickupdate" class="form-control" value="{{$mdespatch->pickupdate}}" placeholder="Pick Up Date" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="scheme" class="form-control" value="{{$mdespatch->scheme}}" placeholder="Scheme" />
+				Scheme	<input type="text" name="scheme" class="form-control" value="{{$mdespatch->scheme}}" placeholder="Scheme" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="destination" class="form-control" value="{{$mdespatch->destination}}" placeholder="Destination" />
+			Inspection Note No	<input type="text" name="inn" class="form-control" value="{{$mdespatch->inn}}" placeholder="Inspection Note No" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="nobox" class="form-control" value="{{$mdespatch->nobox}}" placeholder="NO Of Boxes" />
+				Destination	<input type="text" name="destination" class="form-control" value="{{$mdespatch->destination}}" placeholder="Destination" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="weight" class="form-control" value="{{$mdespatch->weight}}" placeholder="Weight" />
+				NO Of Boxes	<input type="text" name="nobox" class="form-control" value="{{$mdespatch->nobox}}" placeholder="NO Of Boxes" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="rate" class="form-control" value="{{$mdespatch->rate}}" placeholder="Rate" />
+				Weight	<input type="text" name="weight" class="form-control" value="{{$mdespatch->weight}}" placeholder="Weight" />
 			</div>
 			<div class="form-group">
-				<input type="text" name="amount" class="form-control" value="{{$mdespatch->amount}}" placeholder="Total Amount" />
+				Rate	<input type="text" name="rate" class="form-control" value="{{$mdespatch->rate}}" placeholder="Rate" />
+			</div>
+			<div class="form-group">
+				Total Amount	<input type="text" name="amount" class="form-control" value="{{$mdespatch->amount}}" placeholder="Total Amount" />
 			</div>
 			<div class="form-group">
 				<input type="submit" class="btn btn-primary" value="Edit" />
