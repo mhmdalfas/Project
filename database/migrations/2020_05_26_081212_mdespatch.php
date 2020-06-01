@@ -15,7 +15,7 @@ class mdespatch extends Migration
     public function up()
     {
         Schema::create('mdespatches', function (Blueprint $table) {
-            $table->year('year')->nullable();
+            $table->year('year');
             $table->bigincrements('id');
             $table->integer('slno');
             $table->date('date')->nullable();

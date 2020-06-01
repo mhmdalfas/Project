@@ -26,6 +26,12 @@
 <div>
     <form method="post" action="{{url('mdespatch')}}">
         {{csrf_field()}}
+        <div class="form-group">
+            <input type="text" name="slno" class="form-control" placeholder="SL No"  value="{{old('slno')}}" />
+        </div>
+        <div class="form-group">
+            <input placeholder="Year" name="year" class="form-control"  value="{{old('year')}}" date='year'/>
+        </div>
          
         <div class="form-group">
             <input type="text" name="slno" class="form-control" placeholder="SL No"  value="{{old('slno')}}" />
@@ -37,7 +43,7 @@
             <input type="text" name="transporter" class="form-control" placeholder="Transporter" value="{{old('transporter')}}" />
         </div>
         <div class="form-group">
-            <input type="text" name="lrno" class="form-control" placeholder="LR No" value="{{old('lrno')}}"/>
+            <input type="text" name="lrno" class="form-control" placeholder="Lorry No" value="{{old('lrno')}}"/>
         </div>
         <div class="form-group">
             <input  name="lrdate" class="form-control" placeholder="LR Date" value="{{old('lrdate')}}" onfocus="(this.type='date')" onblur="(this.type='text')"/>

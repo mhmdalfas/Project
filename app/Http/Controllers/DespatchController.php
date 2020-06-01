@@ -34,6 +34,7 @@ class DespatchController extends Controller
          $mdespatch = new Mdespatch([
  
         'slno' => $request -> get('slno'),
+        'year' => $request -> get('year'),
         'date' => $request -> get('date'),
         'transporter' => $request -> get('transporter'),
         'lrno' => $request -> get('lrno'),

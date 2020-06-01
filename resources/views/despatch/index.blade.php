@@ -12,17 +12,19 @@
   </div>
   @endif
   <div align="right">
-    <a href="{{route('mdespatch.create')}}" class="btn btn-primary">Add</a>
+    <a href="{{route('mdespatch.create')}}" class="btn btn-primary">Add New Order</a>
     <br />
     <br />
    </div>
-  <table class="table table-bordered table-striped">
+   
+  <table class="table table-bordered table-striped" align=left>
    <tr>
     <th>SL NO</th>
+    <th>Year</th>
     <th>Date</th>
     <th>Transporter</th>
-    <th>LR NO</th>
-    <th>LR Date</th>
+    <th>Lorry No</th>
+    <th>Lorry Receipt Date</th>
     <th>Pick Up Date</th>
     <th>Scheme</th>
     <th>Inspection Note No</th>
@@ -37,7 +39,9 @@
    </tr>
    @foreach($mdespatches as $row)
    <tr>
+    
     <td>{{$row['slno']}}</td>
+    <td>{{$row['year']}}</td>
     <td>{{$row['date']}}</td>
     <td>{{$row['transporter']}}</td>
     <td>{{$row['lrno']}}</td>
