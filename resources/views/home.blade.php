@@ -13,10 +13,19 @@
         <a href="{{route('join')}}"class="btn btn-primary btn-lg">View Data</a>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <a href="{{route('mdespatch.index')}}"class="btn btn-primary btn-lg">Govt Despatch</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{{route('domestic.index')}}"class="btn btn-primary btn-lg">Domestic Despatch</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;<br>
+        
+
 <br><br><br><br>
 
 </div>
+<a href="{{route('mdespatch.index')}}"class="btn btn-primary btn-lg">Despatch Details</a>
+
+<div>
 
 
+</div>
 
 @endsection

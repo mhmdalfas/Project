@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
-class mdespatch extends Migration
+class CreateDomesticsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +13,7 @@ class mdespatch extends Migration
      */
     public function up()
     {
-        Schema::create('mdespatches', function (Blueprint $table) {
+        Schema::create('domestics', function (Blueprint $table) {
             $table->year('year')->nullable();
             $table->bigincrements('id')->nullable();
             $table->integer('slno')->nullable();
@@ -24,18 +23,15 @@ class mdespatch extends Migration
             $table->date('lrdate')->nullable();
             $table->date('pickupdate')->nullable();
             $table->string('scheme')->nullable();
-            $table->integer('inn')->nullable();
             $table->string('destination')->nullable();
             $table->string('nobox')->nullable();
             $table->string("weight")->nullable();
             $table->integer('rate')->nullable();
             $table->integer('quantity')->nullable();
             $table->integer('total')->nullable();
-           
-           
         });
     }
-   
+
     /**
      * Reverse the migrations.
      *
@@ -43,6 +39,6 @@ class mdespatch extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('domestics');
     }
 }

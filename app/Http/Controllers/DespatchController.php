@@ -57,15 +57,7 @@ class DespatchController extends Controller
 
 
        }
-       public function total(Request $request)
-       {
-           $rate=$request->input('rate');
-           $quantity=$request->input('quantity');
-           $total=1;
-           $total=$rate*$quantity;
-
-       }
-
+      
 
 
 
@@ -102,6 +94,7 @@ class DespatchController extends Controller
                  $mdespatch->lrdate = $request->get('lrdate');
                  $mdespatch->pickupdate = $request->get('pickupdate');
                  $mdespatch->scheme = $request->get('scheme');
+                 $mdespatch->inn = $request->get('inn');
                  $mdespatch->destination = $request->get('destination');
                  $mdespatch->nobox = $request->get('nobox');
                  $mdespatch->weight = $request->get('weight');
