@@ -51,7 +51,7 @@
 				Rate	<input type="text" name="rate" class="form-control" value="{{$domestic->rate}}" placeholder="Rate" />
 			</div>
 			<div class="form-group">
-				Total Amount	<input type="text" name="amount" class="form-control" value="{{$domestic->amount}}" placeholder="Total Amount" />
+				Quantity	<input type="text" name="quantity" class="form-control" value="{{$domestic->quantity}}" placeholder="Quantity" />
 			</div>
 			<div class="form-group">
 				<input type="submit" class="btn btn-primary" value="Edit" />

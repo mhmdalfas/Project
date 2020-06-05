@@ -121,7 +121,10 @@ class DomesticController extends Controller
              $domestic->nobox = $request->get('nobox');
              $domestic->weight = $request->get('weight');
              $domestic->rate = $request->get('rate');
-             $domestic->amount = $request->get('amount');
+             $domestic->quantity = $request->get('quantity');
+             $rate = $domestic->rate;
+             $quantity = $domestic->quantity;
+             $domestic->total=$rate*$quantity;
 $domestic->save();
 return redirect()->route('domestic.index')->with('success', 'Data Updated');}
 

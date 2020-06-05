@@ -27,7 +27,7 @@ class CreateDomesticsTable extends Migration
             $table->string('nobox')->nullable();
             $table->string("weight")->nullable();
             $table->integer('rate')->nullable();
-            $table->integer('quantity')->nullable();
+            $table->integer('quantity');
             $table->integer('total')->nullable();
         });
     }

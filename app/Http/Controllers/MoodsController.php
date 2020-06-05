@@ -46,7 +46,7 @@ class MoodsController extends Controller
         'stomonth' => $request -> get('stomonth'),
         'deliveryno' => $request -> get('deliveryno'),
         'goodsissue' => $request -> get('goodsissue'),
-        'qtytodespatch' => $request -> get('lrno'),
+        'qtytodespatch' => $request -> get('qtytodespatch'),
         'scheme' => $request -> get('scheme'),
         'batchno' => $request -> get('batchno'),
         'readyboxes' => $request -> get('readyboxes'),
@@ -58,9 +58,9 @@ class MoodsController extends Controller
         
 
                   ]);
-                  $balance = $mood->balance;
-                  $quantity = $mood->quantity;
-                  $mood->total=$balance*$quantity;
+                  $qtytodespatch = $mood->qtytodespatch;
+                  $readyboxes = $mood->readyboxes;
+                  $mood->balance=$qtytodespatch-$readyboxes;
             $mood->save();
             return redirect()->route('mood.index')->with('success', 'Data Added');
 
