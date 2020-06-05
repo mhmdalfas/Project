@@ -21,7 +21,7 @@
 <br><br><br><br>
 
 </div>
-<a href="{{route('mdespatch.index')}}"class="btn btn-primary btn-lg">Despatch Details</a>
+<a href="{{route('mood.index')}}"class="btn btn-primary btn-lg">Moods Domestic Despatch</a>
 
 <div>
 

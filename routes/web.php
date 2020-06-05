@@ -54,6 +54,8 @@ Route::view('hll.order','order');
 
 Route::resource('mdespatch', 'DespatchController');
 Route::resource('domestic', 'DomesticController');
+Route::resource('mood', 'MoodsController');
+
 
 
 
