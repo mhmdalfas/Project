@@ -55,8 +55,14 @@ Route::view('hll.order','order');
 Route::resource('mdespatch', 'DespatchController');
 Route::resource('domestic', 'DomesticController');
 Route::resource('mood', 'MoodsController');
+Route::get('/moodspdf', 'MoodsPDFController@index');
+Route::get('/moodspdf/pdf', 'MoodsPDFController@pdf');
 
+Route::get('/domesticpdf', 'DomesticPDFController@index');
+Route::get('/domesticpdf/pdf', 'DomesticPDFController@pdf');
 
+Route::get('/governmentpdf', 'GovernmentPDFController@index');
+Route::get('/governmentpdf/pdf', 'GovernmentPDFController@pdf');
 
 
 

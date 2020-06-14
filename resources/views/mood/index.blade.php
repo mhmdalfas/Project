@@ -13,6 +13,7 @@
   @endif
   <div align="right">
     <a href="{{route('mood.create')}}" class="btn btn-primary">Add New Order</a>
+    <a href="{{ url('moodspdf/pdf') }}" class="btn btn-danger" align='right'>Convert into PDF</a>
     <br />
     <br />
    </div>

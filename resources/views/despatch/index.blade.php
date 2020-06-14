@@ -13,6 +13,7 @@
   @endif
   <div align="right">
     <a href="{{route('mdespatch.create')}}" class="btn btn-primary">Add New Order</a>
+    <a href="{{url('governmentpdf/pdf')}}" class="btn btn-danger">Convert to PDF</a>
     <br />
     <br />
    </div>

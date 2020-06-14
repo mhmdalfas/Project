@@ -13,6 +13,8 @@
   @endif
   <div align="right">
     <a href="{{route('domestic.create')}}" class="btn btn-primary">Add New Order</a>
+        <a href="{{url('domesticpdf/pdf')}}" class="btn btn-danger">Convert to PDF</a>
+    
     <br />
     <br />
    </div>
