@@ -42,7 +42,7 @@
     <td>{{$row['stomonth']}}</td>
     <td>{{$row['deliveryno']}}</td>
     <td>{{$row['goodsissue']}}</td>
-    <td>{{$row['qtytodispatch']}}</td>
+    <td>{{$row['qtytodespatch']}}</td>
     <td>{{$row['scheme']}}</td>
     <td>{{$row['batchno']}}</td>
     <td>{{$row['readyboxes']}}</td>

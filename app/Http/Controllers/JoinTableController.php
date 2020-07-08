@@ -30,7 +30,7 @@ class JoinTableController extends Controller
 
 function search(Request $request)
 {  $search=$request->get('search');
-  //return $request;
+ // return $request;
 
 $data=DB::table('orders')
  ->join('consignees', 'consignees.oid','=' , 'orders.id')

@@ -19,7 +19,7 @@ class CreateMoodsTable extends Migration
             $table->string('stomonth')->nullable();
             $table->integer('deliveryno')->nullable();
             $table->date('goodsissue')->nullable();
-            $table->integer('qtytodispatch')->nullable();
+            $table->integer('qtytodespatch')->nullable();
             $table->string('scheme')->nullable();
             $table->string('batchno')->nullable();
             $table->integer('readyboxes')->nullable();

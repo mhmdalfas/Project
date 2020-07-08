@@ -34,22 +34,22 @@ class MoodsPDFController extends Controller
     {
      $customer_data = $this->get_customer_data();
      $output = '
-     <h3 align="center">Customer Data</h3>
+     <h3 align="center">Moods Despatch </h3>
      <table width="100%" style="border-collapse: collapse; border: 0px;">
       <tr>
-    <th style="border: 1px solid; padding:12px;" width="15%">ID</th>
-    <th style="border: 1px solid; padding:12px;" width="15%">SL NO</th>
-    <th style="border: 1px solid; padding:12px;" width="15%">ST Month</th>
-     <th style="border: 1px solid; padding:12px;" width="15%">Delivery No</th>
-     <th style="border: 1px solid; padding:12px;" width="15%">Goods Issue</th>
-     <th style="border: 1px solid; padding:12px;" width="10%">Quantity to be dispatched</th>
-     <th style="border: 1px solid; padding:12px;" width="10%">Scheme</th>
-     <th style="border: 1px solid; padding:12px;" width="10%">Batch No </th>
-     <th style="border: 1px solid; padding:12px;" width="10%">Raedy Boxes</th>
-     <th style="border: 1px solid; padding:12px;" width="5%">Ready Date</th>
-     <th style="border: 1px solid; padding:12px;" width="5%">Despatch Date</th>
-     <th style="border: 1px solid; padding:12px;" width="5%">Consignee</th>
-     <th style="border: 1px solid; padding:12px;" width="5%">Balance</th>
+    <th style="border: 1px solid; padding:6px;" width="1%">ID</th>
+    <th style="border: 1px solid; padding:6px;" width="1%">SL NO</th>
+    <th style="border: 1px solid; padding:6px;" width="3.5%">ST Month</th>
+     <th style="border: 1px solid; padding:6px;"  width="3.5%">Delivery No</th>
+     <th style="border: 1px solid; padding:6px;"  width="3.5%">Goods Issue</th>
+     <th style="border: 1px solid; padding:6px;"width="2.5%">Quantity to be dispatched</th>
+     <th style="border: 1px solid; padding:6px;"width="2.5%">Scheme</th>
+     <th style="border: 1px solid; padding:6px;" width="2.5%">Batch No </th>
+     <th style="border: 1px solid; padding:6px;" width="2.5%">Raedy Boxes</th>
+     <th style="border: 1px solid; padding:6px;" width="2.5%">Ready Date</th>
+     <th style="border: 1px solid; padding:6px;"width="2%">Despatch Date</th>
+     <th style="border: 1px solid; padding:6px;" width="2%">Consignee</th>
+     <th style="border: 1px solid; padding:6px;" width="2%">Balance</th>
    
    </tr>
      ';  
@@ -57,19 +57,19 @@ class MoodsPDFController extends Controller
      {
       $output .= '
       <tr>
-       <td style="border: 1px solid; padding:12px;">'.$customer->id.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->slno.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->stomonth.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->deliveryno.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->goodsissue.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->qtytodespatch.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->scheme.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->batchno.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->readyboxes.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->readydate.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->despatchdate.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->consignee.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$customer->balance.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->id.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->slno.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->stomonth.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->deliveryno.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->goodsissue.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->qtytodespatch.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->scheme.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->batchno.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->readyboxes.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->readydate.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->despatchdate.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->consignee.'</td>
+       <td style="border: 1px solid; padding:8px;">'.$customer->balance.'</td>
        
 
        
